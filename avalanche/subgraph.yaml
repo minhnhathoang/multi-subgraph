@@ -10,7 +10,7 @@ dataSources:
     source:
       address: "0x6131b5fae19ea4f9d964eac0408e4408b66337b5"
       abi: MetaAggregationRouterV2
-      startBlock: 24458137
+      startBlock: 50230000
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
