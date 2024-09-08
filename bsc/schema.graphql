@@ -1,0 +1,60 @@
+type ClientData @entity(immutable: true) {
+  id: Bytes!
+  clientData: Bytes! # bytes
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Error @entity(immutable: true) {
+  id: Bytes!
+  reason: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Exchange @entity(immutable: true) {
+  id: Bytes!
+  pair: Bytes! # address
+  amountOut: BigInt! # uint256
+  output: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Fee @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  totalAmount: BigInt! # uint256
+  totalFee: BigInt! # uint256
+  recipients: [Bytes!]! # address[]
+  amounts: [BigInt!]! # uint256[]
+  isBps: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Swapped @entity(immutable: true) {
+  id: Bytes!
+  sender: Bytes! # address
+  srcToken: Bytes! # address
+  dstToken: Bytes! # address
+  dstReceiver: Bytes! # address
+  spentAmount: BigInt! # uint256
+  returnAmount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
